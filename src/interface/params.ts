@@ -1,4 +1,3 @@
-export interface LoginParams {
-    account: string,
-    password: string
+export interface SearchSongParams {
+    keywords: string
 }

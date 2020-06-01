@@ -6,8 +6,7 @@ export type Callback = (...args: any[]) => void
 export type MixProps = DispatchProp & RouteComponentProps
 
 export interface Res<T> {
-    success: boolean
-    info: string
-    data: T
-    err_msg?: string
+    code: number
+    result: T
+    msg?: string
 }

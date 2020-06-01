@@ -1,12 +1,16 @@
 import * as params from '../../interface/params'
-import { Callback } from '../../interface/common'
+// import { Callback } from '../../interface/common'
 import * as TYPE from './actionTypes'
 
-
-export const createLogin = (payload: params.LoginParams, callback: Callback) => {
+export const createCounter = (type: string) => {
     return {
-        type: TYPE.LOGIN_REQUEST,
-        payload,
-        callback
+        type
+    }
+}
+
+export const createSearchSong= (payload: params.SearchSongParams) => {
+    return {
+        type: TYPE.SEARCH_SONG_REQUEST,
+        payload
     }
 }

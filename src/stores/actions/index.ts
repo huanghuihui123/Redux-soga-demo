@@ -1,6 +1,6 @@
 import { all } from 'redux-saga/effects'
-import LoginSoga from './login'
+import earchSongSoga from './home'
 
 export default function* rootSaga() {
-  yield all([LoginSoga])
+  yield all([...earchSongSoga()])
 }

@@ -6,13 +6,15 @@ import { routerMiddleware } from 'connected-react-router'
 import createSagaMiddleware from 'redux-saga'
 import createRootReducer from './reducers'
 import rootSaga from './actions'
+// import loginSoga from './actions/login'
 
 export const history = createBrowserHistory()
 const sagaMiddleware = createSagaMiddleware()
 
-export default function configureStore() {
+function configureStore() {
   const store = createStore(
     createRootReducer(history), // root reducer with router state
+    {},
     compose(
       applyMiddleware(
         routerMiddleware(history), // for dispatching history actions
@@ -24,5 +26,12 @@ export default function configureStore() {
 
   sagaMiddleware.run(rootSaga)
 
+  // store.subscribe(() =>
+  //   console.log(store.getState())
+  // );
+
+
   return store
 }
+
+export default configureStore

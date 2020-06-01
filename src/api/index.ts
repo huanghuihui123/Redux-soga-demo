@@ -3,6 +3,8 @@ import * as params from '../interface/params'
 // import * as response from '../interface/response'
 import http from './http'
 
-export const login = (payload: params.LoginParams) => {
-    return http.post(`/api/v1/back_mgr/login`, payload)
+// 搜索歌曲
+export const searchSong = (payload: params.SearchSongParams) => {
+    return http.get(`http://localhost:3000/search?keywords=${payload.keywords}`)
 }
+

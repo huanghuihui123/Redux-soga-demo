@@ -1,9 +1,16 @@
-export interface LoginResponse {
-    token: string
+export interface songsItemAlbum {
+    id: number
     name: string
-    id: string
-    access_no?: number[]
-    product_id?: number[]
-    is_first_login?: string
-    account: string
+}
+
+export interface songsItem {
+    id: number
+    name: string
+    duration: number
+    album: songsItemAlbum
+}
+
+export interface SearchSongResponse {
+    songCount: number
+    songs: songsItem[]
 }
